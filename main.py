@@ -11,11 +11,12 @@ def main():
 
     # Create our plane!
     player = Player()
+    player_group = pg.sprite.Group()
+    player_group.add(player)
 
-    # Group creation. all_entities will contain every sprite in the game
+    # Group creation. obstacles_group will contain every sprite in the game
     # to help with collision detection.
-    all_entities = pg.sprite.Group()
-    all_entities.add(player)
+    obstacles_group = pg.sprite.Group()
 
     background = pg.image.load("assets/images/background.png").convert()
     background_box = background.get_rect()
@@ -38,10 +39,10 @@ def main():
                 flip_a_coin = random.randint(0, 1)
                 if flip_a_coin == 0:
                     obstacle = Obstacles(True)
-                    all_entities.add(obstacle)
+                    obstacles_group.add(obstacle)
                 else:
                     obstacle = Obstacles(False)
-                    all_entities.add(obstacle)
+                    obstacles_group.add(obstacle)
 
         pressed_keys = pg.key.get_pressed()
 
@@ -50,11 +51,16 @@ def main():
 
         # Update the game world.
         player.update()
-        all_entities.update()
+        obstacles_group.update()
+
+        # Collision detection...
+        if pg.sprite.spritecollideany(player, obstacles_group):
+            player.kill()
 
         # Draw the game world
         screen.blit(background, background_box)
-        all_entities.draw(screen)
+        obstacles_group.draw(screen)
+        player_group.draw(screen)
 
         pg.display.flip()
 

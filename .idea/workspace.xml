@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a13d4f41-ff4d-4bb4-817b-bf9f4f542502" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Obstacles.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/FlappyClone.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FlappyClone.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,22 +77,26 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1578" height="217" key="GridCell.Tab.0.bottom" timestamp="1582044280434">
+    <state x="480" y="164" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1582044926738">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1578" height="217" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1582044280434" />
-    <state width="1578" height="217" key="GridCell.Tab.0.center" timestamp="1582044280434">
+    <state x="480" y="164" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1600.860@0.0.1600.860" timestamp="1582044926738" />
+    <state width="1578" height="217" key="GridCell.Tab.0.bottom" timestamp="1582045664099">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1578" height="217" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1582044280434" />
-    <state width="1578" height="217" key="GridCell.Tab.0.left" timestamp="1582044280434">
+    <state width="1578" height="217" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1582045664099" />
+    <state width="1578" height="217" key="GridCell.Tab.0.center" timestamp="1582045664099">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1578" height="217" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1582044280434" />
-    <state width="1578" height="217" key="GridCell.Tab.0.right" timestamp="1582044280434">
+    <state width="1578" height="217" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1582045664099" />
+    <state width="1578" height="217" key="GridCell.Tab.0.left" timestamp="1582045664099">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1578" height="217" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1582044280434" />
+    <state width="1578" height="217" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1582045664099" />
+    <state width="1578" height="217" key="GridCell.Tab.0.right" timestamp="1582045664099">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1578" height="217" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1582045664099" />
     <state x="301" y="60" key="SettingsEditor" timestamp="1582037729005">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
