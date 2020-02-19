@@ -30,12 +30,12 @@ class Obstacles(pg.sprite.Sprite):
         new_width, new_height = int(self.image.get_rect().width * 0.75), int(self.image.get_rect().height * 0.75)
         self.image = pg.transform.scale(self.image, (new_width, new_height))
         if down:
-            self.rect = pg.rect.Rect(constants.SCREEN_WIDTH - self.image.get_rect().width,
-                                     0,
+            self.rect = pg.rect.Rect(constants.SCREEN_WIDTH,
+                                     0 + constants.SCORE_SURFACE_HEIGHT,
                                      self.image.get_rect().width,
                                      self.image.get_rect().height)
         else:
-            self.rect = pg.rect.Rect(constants.SCREEN_WIDTH - self.image.get_rect().width,
-                                     constants.SCREEN_HEIGHT - self.image.get_rect().height,
+            self.rect = pg.rect.Rect(constants.SCREEN_WIDTH,
+                                     constants.SCREEN_HEIGHT + constants.SCORE_SURFACE_HEIGHT - self.image.get_rect().height,
                                      self.image.get_rect().width,
                                      self.image.get_rect().height)
