@@ -1,13 +1,16 @@
 import pygame as pg
 import random
 from player import Player
-from Obstacles import Obstacles
+from obstacles import Obstacles
+from scoredisplay import ScoreDisplay
 import constants
 
 
 def main():
     screen = pg.display.set_mode(constants.SCREEN_RESOLUTION)
     pg.display.set_caption("Flappy Clone")
+
+    score_display = ScoreDisplay()
 
     # Create our plane!
     player = Player()
@@ -20,10 +23,13 @@ def main():
 
     background = pg.image.load("assets/images/background.png").convert()
     background_box = background.get_rect()
+    background_box.y += constants.SCORE_SURFACE_HEIGHT
 
     # Create a custom event for adding a new obstacle
-    ADD_OBSTACLES = pg.USEREVENT + 1
-    pg.time.set_timer(ADD_OBSTACLES, 1000)
+    ADD_OBSTACLE = pg.USEREVENT + 1
+    ADD_DOUBLE_OBSTACLES = pg.USEREVENT + 2
+    pg.time.set_timer(ADD_OBSTACLE, 1000)
+    pg.time.set_timer(ADD_DOUBLE_OBSTACLES, 3000)
 
     clock = pg.time.Clock()
 
@@ -35,7 +41,7 @@ def main():
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_ESCAPE:
                     running = False
-            if event.type == ADD_OBSTACLES:
+            if event.type == ADD_OBSTACLE:
                 flip_a_coin = random.randint(0, 1)
                 if flip_a_coin == 0:
                     obstacle = Obstacles(True)
@@ -43,6 +49,11 @@ def main():
                 else:
                     obstacle = Obstacles(False)
                     obstacles_group.add(obstacle)
+            if event.type == ADD_DOUBLE_OBSTACLES:
+                obstacle1 = Obstacles(True)
+                obstacle2 = Obstacles(False)
+                obstacles_group.add(obstacle1)
+                obstacles_group.add(obstacle2)
 
         pressed_keys = pg.key.get_pressed()
 
@@ -52,6 +63,7 @@ def main():
         # Update the game world.
         player.update()
         obstacles_group.update()
+        score_display.update_score(player)
 
         # Collision detection...
         if pg.sprite.spritecollideany(player, obstacles_group):
@@ -61,6 +73,7 @@ def main():
         screen.blit(background, background_box)
         obstacles_group.draw(screen)
         player_group.draw(screen)
+        score_display.render(screen)
 
         pg.display.flip()
 
