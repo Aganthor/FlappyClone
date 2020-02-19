@@ -20,6 +20,7 @@ class Player(pg.sprite.Sprite):
         self.current_index = 0
         self.image = self.images[self.current_index]
         self.rect = self.image.get_rect()
+        self.score = 0
 
     def update(self):
         self.current_index += 1
@@ -32,7 +33,12 @@ class Player(pg.sprite.Sprite):
             self.rect.move_ip(-self.MOVE_SPEED, 0)
         elif pressed_keys[pg.K_RIGHT]:
             self.rect.move_ip(self.MOVE_SPEED, 0)
-        if pressed_keys[pg.K_UP]:
+        elif pressed_keys[pg.K_UP]:
             self.rect.move_ip(0, -self.MOVE_SPEED)
         elif pressed_keys[pg.K_DOWN]:
             self.rect.move_ip(0, self.MOVE_SPEED)
+        if pressed_keys[pg.K_s]:
+            self.score += 10
+
+    def get_score(self):
+        return self.score
