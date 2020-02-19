@@ -1,6 +1,7 @@
 import pygame as pg
 import os
 
+
 class Player(pg.sprite.Sprite):
     """
     Simple class to represent our little user controlled plane in the
@@ -12,7 +13,7 @@ class Player(pg.sprite.Sprite):
         super(Player, self).__init__()
         self.images = []
         for i in range(3):
-            img = pg.image.load(os.path.join('assets/images/', 'planeRed' + str(i+1) + '.png')).convert()
+            img = pg.image.load(os.path.join('assets/images/', 'planeRed' + str(i + 1) + '.png')).convert()
             img.convert_alpha()
             img.set_colorkey((0, 0, 0))
             self.images.append(img)
@@ -20,13 +21,11 @@ class Player(pg.sprite.Sprite):
         self.image = self.images[self.current_index]
         self.rect = self.image.get_rect()
 
-
     def update(self):
         self.current_index += 1
         if self.current_index >= len(self.images):
             self.current_index = 0
         self.image = self.images[self.current_index]
-
 
     def handle_input(self, pressed_keys):
         if pressed_keys[pg.K_LEFT]:
