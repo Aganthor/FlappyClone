@@ -2,8 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a13d4f41-ff4d-4bb4-817b-bf9f4f542502" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/images/numbers/number0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/numbers/number1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/numbers/number2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/numbers/number3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/numbers/number4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/numbers/number5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/numbers/number6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/numbers/number7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/numbers/number8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/numbers/number9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/game_state.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scoredisplay.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Obstacles.py" beforeDir="false" afterPath="$PROJECT_DIR$/Obstacles.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Obstacles.py" beforeDir="false" afterPath="$PROJECT_DIR$/obstacles.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +45,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -76,27 +91,30 @@
     </task>
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="480" y="164" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1582044926738">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="480" y="164" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1600.860@0.0.1600.860" timestamp="1582044926738" />
-    <state width="1578" height="217" key="GridCell.Tab.0.bottom" timestamp="1582127134795">
+    <state width="1578" height="217" key="GridCell.Tab.0.bottom" timestamp="1582143303325">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1578" height="217" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1582127134795" />
-    <state width="1578" height="217" key="GridCell.Tab.0.center" timestamp="1582127134795">
+    <state width="1578" height="217" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1582143303325" />
+    <state width="1578" height="217" key="GridCell.Tab.0.center" timestamp="1582143303325">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1578" height="217" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1582127134795" />
-    <state width="1578" height="217" key="GridCell.Tab.0.left" timestamp="1582127134795">
+    <state width="1578" height="217" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1582143303325" />
+    <state width="1578" height="217" key="GridCell.Tab.0.left" timestamp="1582143303325">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1578" height="217" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1582127134795" />
-    <state width="1578" height="217" key="GridCell.Tab.0.right" timestamp="1582127134795">
+    <state width="1578" height="217" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1582143303325" />
+    <state width="1578" height="217" key="GridCell.Tab.0.right" timestamp="1582143303325">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1578" height="217" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1582127134795" />
+    <state width="1578" height="217" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1582143303325" />
     <state x="301" y="60" key="SettingsEditor" timestamp="1582037729005">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
