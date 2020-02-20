@@ -10,6 +10,7 @@ class ScoreDisplay:
     SCORE_NUMBER_WIDTH = 53
 
     def __init__(self):
+        self.redo_score_surf = True  # Should we refresh the score_surf to reflect any score changes?
         self.number_dict = {}
         self.letters_dict = {}
         self.score_surf = pg.Surface((constants.SCREEN_WIDTH, constants.SCORE_SURFACE_HEIGHT))
@@ -24,7 +25,8 @@ class ScoreDisplay:
         :param screen: The main game screen surface
         :return: None
         """
-        self.score_surf.blit(self.prepare_score_surface(), (0, 0))
+        if self.redo_score_surf:
+            self.score_surf.blit(self.prepare_score_surface(), (0, 0))
         screen.blit(self.score_surf, (0, 0))
 
     def update_score(self, player):
@@ -33,8 +35,11 @@ class ScoreDisplay:
         :param player: The player object from which we can get the score.
         :return:
         """
-        self.score += player.get_score()
-        #print(f"Player score is {self.score}")
+        if self.score != player.get_score():
+            self.score = player.get_score()
+            self.redo_score_surf = True
+        else:
+            self.redo_score_surf = False
 
     def prepare_score_surface(self):
         """
@@ -64,13 +69,5 @@ class ScoreDisplay:
             self.number_dict[i] = img#pg.transform.scale(img, (new_width, new_height))
 
     def load_letter_sprites(self):
-        # for letter in ['S', 'C']
-        # self.letters_dict['S'] = pg.image.load(os.path.join('assets/images/letters/', 'letterS.png')).convert()
-        # self.letters_dict['C'] = pg.image.load(os.path.join('assets/images/letters/', 'letterC.png')).convert()
-        # self.letters_dict['O'] = pg.image.load(os.path.join('assets/images/letters/', 'letterO.png')).convert()
-        # self.letters_dict['R'] = pg.image.load(os.path.join('assets/images/letters/', 'letterR.png')).convert()
-        # self.letters_dict['E'] = pg.image.load(os.path.join('assets/images/letters/', 'letterE.png')).convert()
-        # self.letters_dict['L'] = pg.image.load(os.path.join('assets/images/letters/', 'letterL.png')).convert()
-        # self.letters_dict['I'] = pg.image.load(os.path.join('assets/images/letters/', 'letterI.png')).convert()
-        # self.letters_dict['V'] = pg.image.load(os.path.join('assets/images/letters/', 'letterV.png')).convert()
-        pass
+        for letter in ['S', 'C', 'O', 'R', 'E', 'L', 'I', 'V']:
+            self.letters_dict[letter] = pg.image.load(os.path.join('assets/images/Letters/', 'letter' + letter + '.png')).convert()
