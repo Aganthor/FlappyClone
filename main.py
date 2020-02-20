@@ -1,7 +1,13 @@
+"""
+Trying to code a flappy bird clone!
+1- will have 3 lives
+2- procedurally generated columns
+3- display (lives, score, time?)
+"""
 import pygame as pg
 import random
 from player import Player
-from obstacles import Obstacles
+from Obstacles import Obstacles
 from scoredisplay import ScoreDisplay
 import constants
 
