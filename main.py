@@ -7,7 +7,7 @@ Trying to code a flappy bird clone!
 import pygame as pg
 import random
 from player import Player
-from Obstacles import Obstacles
+from obstacles import Obstacles
 from scoredisplay import ScoreDisplay
 import constants
 
