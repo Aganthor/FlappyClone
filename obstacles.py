@@ -20,6 +20,8 @@ class Obstacles(pg.sprite.Sprite):
     def update(self, *args):
         self.rect.move_ip(-self.MOVE_SPEED, 0)
         self.rect.move_ip(-self.MOVE_SPEED, 0)
+        if self.rect.right < 0:
+            self.kill()
 
     def load_image(self, filename, down):
         self.image = pg.image.load(filename).convert()
