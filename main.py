@@ -10,18 +10,22 @@ from player import Player
 from obstacles import Obstacles
 from scoredisplay import ScoreDisplay
 import constants
+from game_state import GameStates
+from player_dead_state import PlayerDeadState
+from plane_explosion import PlaneExplosion
 
 
 def main():
     screen = pg.display.set_mode(constants.SCREEN_RESOLUTION)
     pg.display.set_caption("Flappy Clone")
 
-    score_display = ScoreDisplay()
-
     # Create our plane!
     player = Player()
     player_group = pg.sprite.Group()
     player_group.add(player)
+
+    score_display = ScoreDisplay(player.MAX_LIVES)
+    player_explosion = PlaneExplosion()
 
     # Group creation. obstacles_group will contain every sprite in the game
     # to help with collision detection.
@@ -36,6 +40,9 @@ def main():
     ADD_DOUBLE_OBSTACLES = pg.USEREVENT + 2
     pg.time.set_timer(ADD_OBSTACLE, 1000)
     pg.time.set_timer(ADD_DOUBLE_OBSTACLES, 3000)
+
+    game_state = GameStates.GAME_RUNNING
+    player_dead_state = PlayerDeadState()
 
     clock = pg.time.Clock()
 
@@ -66,20 +73,45 @@ def main():
         # Process user input.
         player.handle_input(pressed_keys)
 
-        # Update the game world.
-        player.update()
-        obstacles_group.update()
-        score_display.update_score(player)
+        # PlayerDeadState should only process inputs if player is dead!
+        if game_state == GameStates.PLAYER_DEAD:
+            player_dead_state.handle_input(pressed_keys)
+            if player_dead_state.restart_game():
+                player.reset()
+                player_group.add(player)
+                obstacles_group.empty()
+                game_state = GameStates.GAME_RUNNING
 
-        # Collision detection...
-        if pg.sprite.spritecollideany(player, obstacles_group):
-            player.kill()
+        if game_state == GameStates.PLAYER_EXPLOSION:
+            player_explosion.update()
+
+        if game_state == GameStates.GAME_RUNNING:
+            # Update the game world.
+            player.update()
+            obstacles_group.update()
+            score_display.update_score(player)
+
+            # Collision detection...
+            if pg.sprite.spritecollideany(player, obstacles_group):
+                if player.player_death():
+                    player.kill()
+                    score_display.update_player_lives(player)
+                    game_state = GameStates.PLAYER_DEAD
+                else:
+                    game_state = GameStates.PLAYER_EXPLOSION
+                    player_explosion.set_position(player.rect.topleft)
+                    score_display.update_player_lives(player)
+                    player.reset_position()
 
         # Draw the game world
         screen.blit(background, background_box)
         obstacles_group.draw(screen)
         player_group.draw(screen)
         score_display.render(screen)
+        if game_state == GameStates.PLAYER_DEAD:
+            player_dead_state.render(screen)
+        if game_state == GameStates.PLAYER_EXPLOSION:
+            screen.blit(player_explosion.image, player_explosion.rect)
 
         pg.display.flip()
 
