@@ -17,7 +17,7 @@ class Obstacles(pg.sprite.Sprite):
         else:
             self.load_image("assets/images/rockGrass.png", down)
 
-    def update(self, *args):
+    def update(self):
         self.rect.move_ip(-self.MOVE_SPEED, 0)
         self.rect.move_ip(-self.MOVE_SPEED, 0)
         if self.rect.right < 0:
