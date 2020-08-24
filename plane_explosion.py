@@ -28,6 +28,6 @@ class PlaneExplosion(pg.sprite.Sprite):
         """
         Sets the position of the explosion.
         :param pos: Tuple for position.
-        :return:
+        :return: None
         """
         self.rect.topleft = pos
